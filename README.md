@@ -14,4 +14,4 @@ Tecnologias utilizadas:
 Objetivo: O principal objetivo deste portfólio é mostrar meu progresso como desenvolvedor web, com foco na criação de interfaces responsivas e interativas. 
 Estou constantemente atualizando e melhorando o conteúdo conforme adquiro novas habilidades e tecnologias.
 
-Obrigado pela atenção! 😊
+Obrigado pela atenção! 😊😁
