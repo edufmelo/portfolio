@@ -178,7 +178,7 @@ header .menu-mobile .logo-mobile {
   
 .about .container .content .about-me {
     display: flex;
-    gap:70px;
+    gap: 70px;
     margin: 0 100px;
     align-items: center;
     justify-content: center;
@@ -197,11 +197,12 @@ header .menu-mobile .logo-mobile {
 }
   
 .about .container .content .about-me .description {
-    width: 65%;
+    width: 53%;
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-family: "Inter";
+    text-align: justify;
 }
 
 .about .container .content .about-me .description .welcome {
@@ -321,10 +322,6 @@ header .menu-mobile .logo-mobile {
     border-radius: 12px; 
 }
 
-.project .container .content .projects .card .description .icons a:visited {
-    color: black; 
-}
-
 .project .container .content .projects .card .description {
     display: flex;  
     align-items: center; 
@@ -355,6 +352,10 @@ header .menu-mobile .logo-mobile {
     transform: scale(1.2);
 }
 
+.project .container .content .projects .card .description .icons a {
+    color: black; 
+}
+
 .contact .container .content .contact-area {
     display: flex;
     flex-direction: row;
@@ -376,7 +377,7 @@ header .menu-mobile .logo-mobile {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 8px;
+    gap: 7px;
 }
   
 .contact .container .content .contact-form .input input {
@@ -765,15 +766,9 @@ footer .container .totop .bi-arrow-up-circle:hover {
     
     .about .container .content .about-me {
         gap: 30px;
-        margin: 0 20px;
+        margin: 0 30px;
         display: flex;
         flex-direction: column;
-    }
-    
-    .about .container .content .about-me .profile {
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
     
     
@@ -783,8 +778,10 @@ footer .container .totop .bi-arrow-up-circle:hover {
     }
     
     .about .container .content .about-me .description {
-        width: 100%;
-        gap: 2px;
+        width: 90%;
+        gap: 5px;
+        text-align: justify;
+
     }
 
     .about .container .content .about-me .description .welcome {
