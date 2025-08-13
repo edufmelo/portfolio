@@ -1,347 +1,326 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portfolio - Eduardo Melo</title>
-        <link rel="icon" type="/png" href="assets/logo/white-logo.png">
-        <link rel="stylesheet" href="global.css">
-        <!-- AOS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-        <!-- FONTES -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-        <!-- ICONS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    </head>
 
-    <body>
-        <!-- MENU -->
-        <header>
-            <div class="logo">
-              <img src="assets/logo/white-logo-adjusted.png" alt="logo" />
-            </div>
-      
-            <nav>
-              <a href="#" data-key="home">home</a>
-              <a href="#about" data-key="about">about</a>
-              <a href="#skill" data-key="skills">skills</a>
-              <a href="#project" data-key="projects">projects</a>
-              <a href="#contact" data-key="contact">contact</a>
-            </nav>
-      
-            <div class="language">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Eduardo Melo</title>
+  <link rel="icon" type="/png" href="assets/logo/white-logo.png">
+  <link rel="stylesheet" href="global.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <!-- ICONS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- MENU -->
+  <header>
+    <div class="logo">
+      <img src="assets/logo/white-logo-adjusted.png" alt="logo" />
+    </div>
+
+    <nav>
+      <a href="#" data-key="home">home</a>
+      <a href="#about" data-key="about">about</a>
+      <a href="#skill" data-key="skills">skills</a>
+      <a href="#project" data-key="projects">projects</a>
+      <a href="#contact" data-key="contact">contact</a>
+    </nav>
+
+    <div class="language">
+      <p><span class="english">en</span> | <span class="portuguese">pt</span></p>
+    </div>
+
+    <!-- MENU MOBILE -->
+    <div class="menu-mobile">
+
+      <div class="logo-mobile">
+        <img src="assets/logo/white-logo-adjusted.png" alt="logo" />
+      </div>
+
+      <div id="menu" class="hamburger-menu">
+        <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 18L20 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 12L20 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+          <path d="M4 6L20 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <div id="nav-mobile" class="mobile-nav">
+        <div id="close-mobile" class="close">
+          <svg width="800px" height="800px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #ffffff;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 2px;
+                }
+              </style>
+            </defs>
+
+            <title />
+
+            <g id="cross">
+              <line class="cls-1" x1="7" x2="25" y1="7" y2="25" />
+
+              <line class="cls-1" x1="7" x2="25" y1="25" y2="7" />
+            </g>
+          </svg>
+        </div>
+        <ul>
+          <li><a class="nav-link" href="#" data-key="home">home</a></li>
+          <li><a class="nav-link" href="#about" data-key="about">about</a></li>
+          <li><a class="nav-link" href="#skill" data-key="skills">skills</a></li>
+          <li><a class="nav-link" href="#project" data-key="projects">projects</a></li>
+          <li><a class="nav-link" href="#contact" data-key="contact">contact</a></li>
+          <li>
+            <div class="language-mobile">
               <p><span class="english">en</span> | <span class="portuguese">pt</span></p>
             </div>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-            <!-- MENU MOBILE -->
-            <div class="menu-mobile">
+  </header>
 
-              <div class="logo-mobile">
-                <img src="assets/logo/white-logo-adjusted.png" alt="logo" />
+  <main>
+
+    <section class="introduction">
+      <div>
+        <h1>Eduardo Ferreira de Melo</h1>
+        <h3 data-key="intro">Computer engineering student.</h3>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="content">
+
+          <div>
+            <h1 class="title" data-aos="zoom-in-down" data-aos-delay="100" data-key="about">about</h1>
+          </div>
+
+          <div class="about-me">
+
+            <div data-aos="zoom-out-right" data-aos-delay="100" class="profile">
+              <img src="assets/me/me.png" alt="me" />
+            </div>
+
+            <div class="description" data-aos="zoom-in-left" data-aos-delay="100">
+              <p class="welcome" data-key="welcome">
+                Welcome,
+              </p>
+              <p class="text-description" data-key="aboutMe">
+                My name is Eduardo Melo,
+                I’m 21 and currently studying Computer Engineering,
+                where I develop skills in both hardware and software.
+                I worked for a year as a developer, gaining practical experience,
+                and I’m now focused on expanding my knowledge through my studies and growing in the tech field.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skill" class="skill">
+      <div class="container">
+        <div class="content">
+
+          <div>
+            <h1 class="title" data-aos="zoom-in-down" data-aos-delay="100" data-key="tools">tools and technologies</h1>
+          </div>
+
+          <div class="carousel" data-aos="zoom-out-right" data-aos-delay="100">
+            <button id="prev" class="nav-btn">‹</button>
+            <div class="carousel-wrapper">
+              <div class="carousel-track">
+                <img src="assets/tools/html5.svg" alt="html" class="slider">
+                <img src="assets/tools/css3.svg" alt="css" class="slider">
+                <img src="assets/tools/javascript.svg" alt="javascript" class="slider on">
+                <img src="assets/tools/jquery.png" alt="jquery" class="slider">
+                <img src="assets/tools/java.png" alt="java" class="slider">
+                <img src="assets/tools/c-language.png" alt="C" class="slider">
+                <img src="assets/tools/c++.png" alt="C++" class="slider">
+                <img src="assets/tools/csharp.png" alt="C#" class="slider">
+                <img src="assets/tools/python.png" alt="python" class="slider">
+                <img src="assets/tools/mysql.png" alt="mysql" class="slider">
+                <img src="assets/tools/microsoftsql.png" alt="microsoftsql" class="slider">
+                <img src="assets/tools/vb.png" alt="vb" class="slider">
+                <img src="assets/tools/git.png" alt="git" class="slider">
+                <img src="assets/tools/github.png" alt="github" class="slider">
+                <img src="assets/tools/vs.png" alt="vs" class="slider">
+                <img src="assets/tools/vscode.png" alt="vscode" class="slider">
+                <img src="assets/tools/net.png" alt=".NET" class="slider">
+                <img src="assets/tools/intellij.png" alt="intellij" class="slider">
+                <img src="assets/tools/solidworks.png" alt="solidworks" class="slider">
+                <img src="assets/tools/figma.png" alt="figma" class="slider">
               </div>
+            </div>
+            <button id="next" class="nav-btn">›</button>
+          </div>
 
-              <div id="menu" class="hamburger-menu">
-                <svg
-                  width="35px"
-                  height="35px"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M4 18L20 18"
-                    stroke="#ffffff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M4 12L20 12"
-                    stroke="#ffffff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                  <path
-                    d="M4 6L20 6"
-                    stroke="#ffffff"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                  />
-                </svg>
-              </div>
+        </div>
+      </div>
+    </section>
 
-              <div id="nav-mobile" class="mobile-nav">
-                <div id="close-mobile" class="close">
-                  <svg
-                    width="800px"
-                    height="800px"
-                    viewBox="0 0 32 32"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <style>
-                        .cls-1 {
-                          fill: none;
-                          stroke: #ffffff;
-                          stroke-linecap: round;
-                          stroke-linejoin: round;
-                          stroke-width: 2px;
-                        }
-                      </style>
-                    </defs>
-                    
-                    <title />
-        
-                    <g id="cross">
-                      <line class="cls-1" x1="7" x2="25" y1="7" y2="25" />
-        
-                      <line class="cls-1" x1="7" x2="25" y1="25" y2="7" />
-                    </g>
-                  </svg>
+    <section id="project" class="project">
+      <div class="container">
+        <div class="content">
+
+          <div>
+            <h1 class="title" data-aos="zoom-in-down" data-aos-delay="100" data-key="recentproj">recent projects</h1>
+          </div>
+
+          <div class="projects">
+
+            <div class="card choppsul" data-aos="zoom-in-down" data-aos-delay="100">
+              <div class="description">
+                <h1>Chopp Sul Araucária</h1>
+                <div class="icons">
+                  <a href="https://github.com/edufmelo/Chopp-Sul-Araucaria" target="_blank">
+                    <img src="assets/icons/white-github.png" alt="GitHub">
+                  </a>
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7288667519589007360/" target="_blank">
+                    <img src="assets/icons/linkedin.png" alt="Linkedin">
+                  </a>
+                  <a href="https://choppsularaucaria.com.br" target="_blank">
+                    <img src="assets/icons/link.png" alt="Link">
+                  </a>
                 </div>
-                <ul>
-                  <li><a class="nav-link" href="#" data-key="home">home</a></li>
-                  <li><a class="nav-link" href="#about" data-key="about">about</a></li>
-                  <li><a class="nav-link" href="#skill" data-key="skills">skills</a></li>
-                  <li><a class="nav-link" href="#project" data-key="projects">projects</a></li>
-                  <li><a class="nav-link" href="#contact" data-key="contact">contact</a></li>
-                  <li><div class="language-mobile"><p><span class="english">en</span> | <span class="portuguese">pt</span></p></div></li>
-                </ul>
               </div>
             </div>
 
-          </header>
-
-          <main>
-            
-            <section class="introduction">
-              <div>
-                <h1>Eduardo Ferreira de Melo</h1>
-                <h3 data-key="intro">Computer engineering student.</h3>
-              </div>
-            </section>
-
-            <section id="about" class="about">
-              <div class="container">
-                <div class="content">
-
-                  <div>
-                    <h1 class="title" data-aos="zoom-in-down" data-aos-delay="100" data-key="about">about</h1>
-                  </div>
-
-                  <div class="about-me">
-
-                    <div data-aos="zoom-out-right" data-aos-delay="100" class="profile">
-                        <img src="assets/me/me.png" alt="me" />
-                    </div>
-        
-                    <div class="description" data-aos="zoom-in-left" data-aos-delay="100">
-                      <p class="welcome" data-key="welcome">
-                        Welcome,
-                      </p>
-                      <p class="text-description" data-key="aboutMe">
-                        My name is Eduardo Melo, 
-                        I’m 21 and currently studying Computer Engineering, 
-                        where I develop skills in both hardware and software. 
-                        I worked for a year as a developer, gaining practical experience, 
-                        and I’m now focused on expanding my knowledge through my studies and growing in the tech field.
-                      </p>
-                    </div>
-                    
-                  </div>
+            <div class="card cleancycle" data-aos="zoom-in-down" data-aos-delay="100">
+              <div class="description">
+                <h1>CleanCycle</h1>
+                <div class="icons">
+                  <a href="https://www.linkedin.com/feed/update/urn:li:activity:7263222407316799488/" target="_blank">
+                    <img src="assets/icons/linkedin.png" alt="Linkedin">
+                  </a>
                 </div>
               </div>
-            </section>
+            </div>
 
-            <section id="skill" class="skill">
-              <div class="container">
-                  <div class="content">
+          </div>
 
-                    <div>
-                      <h1 class="title" data-aos="zoom-in-down" data-aos-delay="100" data-key="tools">tools and technologies</h1>
-                    </div>
+        </div>
+      </div>
+    </section>
 
-                    <div class="carousel" data-aos="zoom-out-right" data-aos-delay="100">
-                        <button id="prev" class="nav-btn">‹</button>
-                        <div class="carousel-wrapper">
-                          <div class="carousel-track">
-                            <img src="assets/tools/html5.svg" alt="html" class="slider">
-                            <img src="assets/tools/css3.svg" alt="css" class="slider">
-                            <img src="assets/tools/javascript.svg" alt="javascript" class="slider on">
-                            <img src="assets/tools/jquery.png" alt="jquery" class="slider">
-                            <img src="assets/tools/java.png" alt="java" class="slider">
-                            <img src="assets/tools/c-language.png" alt="C" class="slider">
-                            <img src="assets/tools/c++.png" alt="C++" class="slider">
-                            <img src="assets/tools/python.png" alt="python" class="slider">
-                            <img src="assets/tools/mysql.png" alt="mysql" class="slider">
-                            <img src="assets/tools/microsoftsql.png" alt="microsoftsql" class="slider">
-                            <img src="assets/tools/vb.png" alt="vb" class="slider">
-                            <img src="assets/tools/git.png" alt="git" class="slider">
-                            <img src="assets/tools/github.png" alt="github" class="slider">
-                            <img src="assets/tools/vs.png" alt="vs" class="slider">
-                            <img src="assets/tools/vscode.png" alt="vscode" class="slider">
-                            <img src="assets/tools/net.png" alt=".NET" class="slider">
-                            <img src="assets/tools/intellij.png" alt="intellij" class="slider">
-                            <img src="assets/tools/solidworks.png" alt="solidworks" class="slider">
-                            <img src="assets/tools/figma.png" alt="figma" class="slider">
-                          </div>
-                        </div>
-                        <button id="next" class="nav-btn">›</button>
-                    </div>
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="100" class="title" data-key="contactme">contact me</h1>
 
-                  </div>
-              </div>
-          </section>
+          <div data-aos="zoom-in-down" data-aos-delay="100">
 
-          <section id="project" class="project">
-            <div class="container">
-              <div class="content">
-                
-                <div>
-                  <h1 class="title" data-aos="zoom-in-down" data-aos-delay="100" data-key="recentproj">recent projects</h1>
+            <div class="contact-area">
+              <form action="https://api.staticforms.xyz/submit" method="post" class="contact-form">
+
+                <div class="input">
+                  <input type="text" name="name" placeholder="your name" data-key="name" />
+                  <input type="email" name="email" placeholder="your email" data-key="email" />
                 </div>
 
-                <div class="projects">
+                <textarea name="message" placeholder="your message" data-key="message"></textarea>
 
-                  <div class="card choppsul" data-aos="zoom-in-down" data-aos-delay="100">
-                    <div class="description">
-                      <h1>Chopp Sul Araucária</h1>
-                      <div class="icons">
-                        <a href="https://github.com/edufmelo/Chopp-Sul-Araucaria" target="_blank">
-                          <img src="assets/icons/white-github.png" alt="GitHub">
-                        </a>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7288667519589007360/" target="_blank">
-                          <img src="assets/icons/linkedin.png" alt="Linkedin">
-                        </a>
-                        <a href="https://choppsularaucaria.com.br" target="_blank">
-                          <img src="assets/icons/link.png" alt="Link">
-                        </a>
+                <input type="hidden" name="replyTo" value="eduferreirademelo@outlook.com">
+                <input type="hidden" name="subject" value="Contact me - eduferreirademelo@outlook.com" />
+                <input type="hidden" name="accessKey" value="421d8104-e070-4956-8846-d5d809b15d3f">
+                <input type="hidden" name="redirectTo" value="https://edufmelo.github.io/portfolio/sucess">
+
+
+                <div class="div-custom-button">
+                  <button type="submit" class="custom-button">
+                    <div class="svg-wrapper-1">
+                      <div class="svg-wrapper">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                          <path fill="none" d="M0 0h24v24H0z"></path>
+                          <path fill="currentColor"
+                            d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                          </path>
+                        </svg>
                       </div>
                     </div>
-                  </div>
-
-                  <div class="card cleancycle" data-aos="zoom-in-down" data-aos-delay="100">
-                    <div class="description">
-                      <h1>CleanCycle</h1>
-                      <div class="icons">
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7263222407316799488/" target="_blank">
-                          <img src="assets/icons/linkedin.png" alt="Linkedin">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
+                    <span data-key="send">Send</span>
+                  </button>
                 </div>
-
+              </form>
+              <div class="div-icons-contact">
+                <a href="https://wa.me/+5541992902456" target="_blank">
+                  <img class="icons-contact" src="assets/icons/whatsapp.png" alt="Whatsapp">
+                </a>
+                <a href="mailto:eduferreirademelo@outlook.com" target="_blank">
+                  <img class="icons-contact" src="assets/icons/email.png" alt="Email">
+                </a>
+                <a href="https://linktr.ee/edufmelo" target="_blank">
+                  <img class="icons-contact" src="assets/icons/linktree.png" alt="Linktree">
+                </a>
+                <a href="https://publuu.com/flip-book/803236/1771633" target="_blank">
+                  <img class="icons-contact" src="assets/icons/paper.png" alt="Curriculum">
+                </a>
               </div>
-            </div>
-          </section>
 
-          <section id="contact" class="contact">
-            <div class="container">
-              <div class="content">
-                <h1 data-aos="zoom-in-down" data-aos-delay="100" class="title" data-key="contactme">contact me</h1>
-                
-                <div data-aos="zoom-in-down" data-aos-delay="100">
-
-                  <div class="contact-area">
-                    <form action="https://api.staticforms.xyz/submit" method="post" class="contact-form">
-
-                      <div class="input">
-                        <input type="text" name="name" placeholder="your name" data-key="name"/>
-                        <input type="email" name="email" placeholder="your email" data-key="email"/>
-                      </div>
-
-                      <textarea name="message" placeholder="your message" data-key="message"></textarea>
-
-                      <input type="hidden" name="replyTo" value="eduferreirademelo@outlook.com">
-                      <input type="hidden" name="subject" value="Contact me - eduferreirademelo@outlook.com" />
-                      <input type="hidden" name="accessKey" value="421d8104-e070-4956-8846-d5d809b15d3f">
-                      <input type="hidden" name="redirectTo" value="https://edufmelo.github.io/portfolio/sucess">
-                      
-                      
-                      <div class="div-custom-button">
-                        <button type="submit" class="custom-button">
-                          <div class="svg-wrapper-1">
-                            <div class="svg-wrapper">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                                width="24"
-                                height="24"
-                              >
-                                <path fill="none" d="M0 0h24v24H0z"></path>
-                                <path
-                                  fill="currentColor"
-                                  d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                                ></path>
-                              </svg>
-                            </div>
-                          </div>
-                          <span data-key="send">Send</span>
-                        </button>
-                      </div>
-                    </form>
-                    <div class="div-icons-contact">             
-                      <a href="https://wa.me/+5541992902456" target="_blank">
-                        <img class="icons-contact" src="assets/icons/whatsapp.png" alt="Whatsapp">
-                      </a>
-                      <a href="mailto:eduferreirademelo@outlook.com" target="_blank">
-                        <img class="icons-contact" src="assets/icons/email.png" alt="Email">
-                      </a>
-                      <a href="https://linktr.ee/edufmelo" target="_blank"> 
-                        <img class="icons-contact" src="assets/icons/linktree.png" alt="Linktree">
-                      </a>
-                      <a href="https://publuu.com/flip-book/803236/1771633" target="_blank">
-                        <img class="icons-contact" src="assets/icons/paper.png" alt="Curriculum">
-                      </a>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </section>
-        </main>
-
-        <!-- Rodapé -->
-        <footer>
-
-          <div data-aos-duration="1000" class="container">
-            <div class="dev">
-              <h3>© Eduardo Melo 2025.</h3>
-            </div>
-            
-            <div>
-              <nav>
-                <a href="https://publuu.com/flip-book/803236/1771633" data-key="resume" target="_blank">resume</a>
-                <a href="https://www.linkedin.com/in/eduardoferreirademelo/" target="_blank">linkedin</a>
-                <a href="https://github.com/edufmelo" target="_blank">github</a>
-                <a href="https://linktr.ee/edufmelo" target="_blank">linktree</a>
-              </nav>
-            </div>
-
-            <div class="totop">
-              <h3 class="backToTop" data-key="backtotop">back to top</h3>
-              <a href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"/>
-                </svg>
-              </a>
             </div>
           </div>
-    
-        </footer>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="script.js"></script>
-    <!-- JQuery -->
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init();
-    </script>
-    </body>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+
+    <div data-aos-duration="1000" class="container">
+      <div class="dev">
+        <h3>© Eduardo Melo 2025.</h3>
+      </div>
+
+      <div>
+        <nav>
+          <a href="https://publuu.com/flip-book/803236/1771633" data-key="resume" target="_blank">resume</a>
+          <a href="https://www.linkedin.com/in/eduardoferreirademelo/" target="_blank">linkedin</a>
+          <a href="https://github.com/edufmelo" target="_blank">github</a>
+          <a href="https://linktr.ee/edufmelo" target="_blank">linktree</a>
+        </nav>
+      </div>
+
+      <div class="totop">
+        <h3 class="backToTop" data-key="backtotop">back to top</h3>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white" class="bi bi-arrow-up-circle"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+  <!-- JQuery -->
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>
