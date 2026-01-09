@@ -192,8 +192,9 @@ header .menu-mobile .logo-mobile {
   
   
 .about .container .content .about-me .profile img {
-    width: 200px;
-    border-radius: 50px;
+    width: 220px;
+    border-radius: 20px;
+    border: 2px solid #9a9ba0;
 }
   
 .about .container .content .about-me .description {
@@ -790,8 +791,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
     
     
     .about .container .content .about-me .profile img {
-        width: 120px;
-        border-radius: 20px;
+        width: 150px;
     }
     
     .about .container .content .about-me .description {
@@ -805,7 +805,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
     }
 
     .about .container .content .about-me .description .text-description {
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .skill .container .content { /*this selector have a bigger gap than others*/
