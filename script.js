@@ -8,7 +8,7 @@ $(document).ready(function () {
         let screenWidth = $(window).width(); // Obtém a largura da tela
         
         // Definir pontos de referência
-        let maxWidth = 1920, maxGap = 210; // Em 1920px, o gap deve ser 200px
+        let maxWidth = 1920, maxGap = 180; // Em 1920px, o gap deve ser 200px
         let minWidth = 400, minGap = 20; // Em 400px, o gap deve ser 20px
         
         // Se a tela for maior que 1920px, mantém 200px
@@ -70,7 +70,7 @@ $(document).ready(function () {
             welcome: "Welcome,",
             aboutMe: "My name is Eduardo Melo, I’m 21 and currently studying Computer Engineering, where I develop skills in both hardware and software. I worked for a year as a developer, gaining practical experience, and I’m now focused on expanding my knowledge through my studies and growing in the tech field.",
             tools: "tools and technologies",
-            recentproj: "recent projects",
+            proj: "projects",
             contactme: "contact me",
             send: "Send",
             placeholders: {
@@ -91,7 +91,7 @@ $(document).ready(function () {
             welcome: "Bem-vindo,",
             aboutMe: "Meu nome é Eduardo Melo, tenho 21 anos e atualmente curso Engenharia da Computação, onde desenvolvo habilidades em hardware e software. Trabalhei por um ano como desenvolvedor, adquirindo experiência prática, e agora estou focado em expandir meus conhecimentos por meio dos meus estudos e crescer na área de tecnologia.",
             tools: "tecnologias e ferramentas",
-            recentproj: "projetos recentes",
+            proj: "projetos",
             contactme: "entre em contato",
             send: "Enviar", 
             placeholders: {
