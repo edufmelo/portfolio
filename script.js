@@ -6,23 +6,23 @@ $(document).ready(function () {
 
     function calculateGap() {
         let screenWidth = $(window).width(); // Obtém a largura da tela
-        
+
         // Definir pontos de referência
-        let maxWidth = 1920, maxGap = 180; // Em 1920px, o gap deve ser 200px
+        let maxWidth = 1920, maxGap = 200; // Em 1920px, o gap deve ser 200px
         let minWidth = 400, minGap = 20; // Em 400px, o gap deve ser 20px
-        
+
         // Se a tela for maior que 1920px, mantém 200px
         if (screenWidth >= maxWidth) return maxGap;
-        
+
         // Se a tela for menor que 430px, mantém 20px
         if (screenWidth <= minWidth) return minGap;
-        
+
         // Calcula o gap proporcionalmente entre 1920px e 430px
         let calculatedGap = minGap + (screenWidth - minWidth) * ((maxGap - minGap) / (maxWidth - minWidth));
-        
+
         return calculatedGap;
     }
-    
+
     function updateGap() {
         let newGap = calculateGap();
         track.css("gap", `${newGap}px`); // Aplica o novo gap dinamicamente
@@ -93,7 +93,7 @@ $(document).ready(function () {
             tools: "tecnologias e ferramentas",
             proj: "projetos",
             contactme: "entre em contato",
-            send: "Enviar", 
+            send: "Enviar",
             placeholders: {
                 name: "seu nome",
                 email: "seu email",
@@ -103,7 +103,7 @@ $(document).ready(function () {
             backtotop: "voltar para o topo"
         }
     };
-    
+
     function changeLanguage(lang) {
         let backToTopHidden = $(".backToTop").css("display") === "none";
 
@@ -113,7 +113,7 @@ $(document).ready(function () {
                 $(".backToTop").hide();
             } // Muda o texto
         }).fadeIn(200); // Mostra novamente com efeito
-    
+
         // Atualiza os placeholders diretamente
         $("input, textarea").each(function () {
             let key = $(this).data("key");
@@ -122,16 +122,16 @@ $(document).ready(function () {
             }
         });
     }
-    
-    
-    $(".english").click(function() {
+
+
+    $(".english").click(function () {
         changeLanguage("en");
     });
 
-    $(".portuguese").click(function() {
+    $(".portuguese").click(function () {
         changeLanguage("pt");
     });
-    
+
     $("#prev").click(prevSlider);
     $("#next").click(nextSlider);
 
@@ -143,16 +143,16 @@ $(document).ready(function () {
     const navLink = document.querySelectorAll(".nav-link");
 
     menu.addEventListener("click", () => {
-    nav.classList.add("show");
+        nav.classList.add("show");
     });
 
     closeButton.addEventListener("click", () => {
-    nav.classList.remove("show");
+        nav.classList.remove("show");
     });
 
     navLink.forEach((link) => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("show");
-    });
+        link.addEventListener("click", () => {
+            nav.classList.remove("show");
+        });
     });
 });

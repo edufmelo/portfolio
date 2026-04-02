@@ -46,7 +46,7 @@ header .logo {
     justify-content: center;
     align-items: center;
 }
-  
+
 header .logo img {
     height: 100%;
     width: 75px;
@@ -86,7 +86,7 @@ header nav a::after {
     transform-origin: right;
     transition: transform 0.3s linear;
 }
-  
+
 header nav a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
@@ -102,20 +102,20 @@ header .language {
 }
 
 header .language span {
-    display: inline-block; 
+    display: inline-block;
     transition: transform 0.3s ease;
 }
 
 header .language span:hover {
     cursor: pointer;
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
-  
+
 header .hamburger-menu {
     cursor: pointer;
     display: none;
 }
-  
+
 header .mobile-nav {
     display: none;
 }
@@ -126,7 +126,7 @@ header .menu-mobile .logo-mobile {
 
 .introduction {
     font-family: "Rubik", "Inter", serif;
-    color:#fff;
+    color: #fff;
     background-color: rgb(0, 0, 0);
     min-height: 100vh;
     display: flex;
@@ -147,15 +147,18 @@ header .menu-mobile .logo-mobile {
 }
 
 .about,
-.skill, 
+.skill,
 .project,
 .contact {
     height: 100vh;
     background-color: #000000;
     color: #fff;
-    display: flex; /* Flexbox para centralizar conteúdo */
-    flex-direction: column; /* Coloca o conteúdo em coluna */
-    align-items: center; /* Centraliza horizontalmente */
+    display: flex;
+    /* Flexbox para centralizar conteúdo */
+    flex-direction: column;
+    /* Coloca o conteúdo em coluna */
+    align-items: center;
+    /* Centraliza horizontalmente */
     justify-content: center;
 }
 
@@ -164,7 +167,7 @@ header .menu-mobile .logo-mobile {
 .contact .container .content {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
     gap: 70px;
 }
 
@@ -175,7 +178,7 @@ header .menu-mobile .logo-mobile {
     font-size: 30px;
     padding-top: 0;
 }
-  
+
 .about .container .content .about-me {
     display: flex;
     gap: 70px;
@@ -183,20 +186,20 @@ header .menu-mobile .logo-mobile {
     align-items: center;
     justify-content: center;
 }
-  
+
 .about .container .content .about-me .profile {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-  
-  
+
+
 .about .container .content .about-me .profile img {
     width: 220px;
     border-radius: 20px;
     border: 2px solid #9a9ba0;
 }
-  
+
 .about .container .content .about-me .description {
     width: 53%;
     display: flex;
@@ -217,10 +220,11 @@ header .menu-mobile .logo-mobile {
     align-items: center;
 }
 
-.skill .container .content { /*this selector have a bigger gap than others*/
+.skill .container .content {
+    /*this selector have a bigger gap than others*/
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
     gap: 100px;
 }
 
@@ -240,14 +244,14 @@ header .menu-mobile .logo-mobile {
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    
+
 }
 
 .carousel-track .slider {
     filter: grayscale(100);
     opacity: 0.5;
     width: 110px;
-    transform: scale(0.7);
+    transform: scale(0.6);
     transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -257,7 +261,7 @@ header .menu-mobile .logo-mobile {
     filter: grayscale(0);
     opacity: 1;
     width: 110px;
-    transform: scale(1.1);
+    transform: scale(1.0);
     transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -291,7 +295,7 @@ header .menu-mobile .logo-mobile {
     width: 85%;
     flex-wrap: wrap;
 }
-  
+
 .project .container .content .projects .card {
     position: relative;
     width: 500px;
@@ -311,15 +315,15 @@ header .menu-mobile .logo-mobile {
     background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.8; 
-    z-index: -1; 
-    border-radius: 12px; 
+    opacity: 0.8;
+    z-index: -1;
+    border-radius: 12px;
 }
 
 .project .container .content .projects .choppsul::before {
     background-image: url("assets/projects/choppsul.png");
 }
- 
+
 .project .container .content .projects .cleancycle::before {
     background-image: url("assets/projects/cleancycle.jpg");
 }
@@ -341,13 +345,13 @@ header .menu-mobile .logo-mobile {
 }
 
 .project .container .content .projects .card .description {
-    display: flex;  
-    align-items: center; 
-    justify-content: space-between; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     position: absolute;
     bottom: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7); 
+    background: rgba(0, 0, 0, 0.7);
     padding: 16px;
     color: #fff;
     border-radius: 12px;
@@ -356,13 +360,13 @@ header .menu-mobile .logo-mobile {
 .project .container .content .projects .card .description h1 {
     font-weight: 600;
     font-size: 28px;
-    margin: 0; 
+    margin: 0;
 }
 
 .project .container .content .projects .card .description img {
     width: 45px;
     cursor: pointer;
-    padding:5px;
+    padding: 5px;
     transition: 0.3s linear;
 }
 
@@ -371,7 +375,7 @@ header .menu-mobile .logo-mobile {
 }
 
 .project .container .content .projects .card .description .icons a {
-    color: black; 
+    color: black;
 }
 
 .contact .container .content .contact-area {
@@ -389,7 +393,7 @@ header .menu-mobile .logo-mobile {
     border: 2px solid #fff;
     border-radius: 20px;
 }
-  
+
 .contact .container .content .contact-form .input {
     width: 100%;
     display: flex;
@@ -397,7 +401,7 @@ header .menu-mobile .logo-mobile {
     justify-content: space-between;
     gap: 7px;
 }
-  
+
 .contact .container .content .contact-form .input input {
     width: 49%;
     padding: 12px;
@@ -406,11 +410,11 @@ header .menu-mobile .logo-mobile {
     border-radius: 8px;
     color: #fff;
 }
-  
+
 .contact .container .content .contact-form .input input:focus {
     outline: none;
 }
-  
+
 .contact .container .content .contact-form textarea {
     resize: none;
     padding: 12px;
@@ -420,7 +424,7 @@ header .menu-mobile .logo-mobile {
     border-radius: 8px;
     color: #fff;
 }
-  
+
 .contact .container .content .contact-form textarea:focus {
     outline: none;
 }
@@ -445,7 +449,7 @@ header .menu-mobile .logo-mobile {
 .contact .container .content .div-custom-button {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;
     padding: 10px;
 }
 
@@ -463,19 +467,19 @@ header .menu-mobile .logo-mobile {
     transition: all 0.2s;
     cursor: pointer;
 }
-  
+
 .contact .container .content .div-custom-button .custom-button span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
 }
-  
+
 .contact .container .content .div-custom-button .custom-button svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
 }
-  
+
 .contact .container .content .div-custom-button .custom-button:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
 }
@@ -483,22 +487,22 @@ header .menu-mobile .logo-mobile {
 .contact .container .content .div-custom-button .custom-button:hover svg {
     transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
-  
+
 .contact .container .content .div-custom-button .custom-button:hover span {
     transform: translateX(5em);
 }
-  
+
 .contact .container .content .div-custom-button .custom-button:active {
     transform: scale(0.95);
 }
-  
+
 @keyframes fly-1 {
     from {
-      transform: translateY(0.1em);
+        transform: translateY(0.1em);
     }
-  
+
     to {
-      transform: translateY(-0.1em);
+        transform: translateY(-0.1em);
     }
 }
 
@@ -511,15 +515,15 @@ footer {
 
 footer .container {
     display: flex;
-    justify-content: space-between; 
-    align-items: center; 
+    justify-content: space-between;
+    align-items: center;
     padding: 50px;
-    width: 90%; 
+    width: 90%;
 }
 
 footer .container .dev {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: flex-start;
 }
 
 footer .container nav {
@@ -557,14 +561,14 @@ footer .container nav a::after {
     transform-origin: right;
     transition: transform 0.3s linear;
 }
-  
+
 footer .container nav a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
     transition: transform 0.3s linear;
 }
 
-footer .container .totop{
+footer .container .totop {
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -583,7 +587,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
 
 .sucess-page {
     font-family: "Rubik", "Inter", serif;
-    color:#fff;
+    color: #fff;
     background-color: rgb(0, 0, 0);
     min-height: 100vh;
     display: flex;
@@ -599,7 +603,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
     font-weight: 700;
     margin-bottom: 10px;
 }
-    
+
 .sucess-page h3 {
     font-size: 20px;
     font-weight: 300;
@@ -621,31 +625,32 @@ footer .container .totop .bi-arrow-up-circle:hover {
     align-items: center;
     font-size: 15px;
 }
-  
+
 .sucess-page .link-back .backhome:hover {
     background: #ffffff;
 }
-  
-.sucess-page .link-back .backhome > svg {
+
+.sucess-page .link-back .backhome>svg {
     width: 34px;
     margin-left: 10px;
     transition: transform 0.3s ease-in-out;
 }
-  
+
 .sucess-page .link-back .backhome:hover svg {
     transform: translateX(5px);
 }
-  
+
 .sucess-page .link-back .backhome:active {
     transform: scale(0.95);
 }
-  
-  @media screen and (max-width: 972px) {
+
+@media screen and (max-width: 972px) {
+
     header nav,
-    header .language, 
+    header .language,
     header .logo,
-    footer .container .totop h3{
-      display: none;
+    footer .container .totop h3 {
+        display: none;
     }
 
     header .menu-mobile {
@@ -663,64 +668,63 @@ footer .container .totop .bi-arrow-up-circle:hover {
         cursor: pointer;
         transform: scale(1.2);
     }
-    
+
     header .hamburger-menu,
-    header .menu-mobile .logo-mobile
-     {
-      display: block;
+    header .menu-mobile .logo-mobile {
+        display: block;
     }
 
     header .mobile-nav {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      transform: translateY(-100%);
-      height: 100vh;
-      background-color: #000;
-      z-index: 999;
-      transition: all 0.3s linear;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateY(-100%);
+        height: 100vh;
+        background-color: #000;
+        z-index: 999;
+        transition: all 0.3s linear;
     }
-  
+
     header .mobile-nav.show {
-      transform: translateY(0);
-      transition: all 0.3s linear;
+        transform: translateY(0);
+        transition: all 0.3s linear;
     }
-  
+
     header .mobile-nav .close {
-      position: absolute;
-      top: 24px;
-      right: 16px;
-      display: flex;
-      justify-content: end;
-      width: 100%;
+        position: absolute;
+        top: 24px;
+        right: 16px;
+        display: flex;
+        justify-content: end;
+        width: 100%;
     }
-  
+
     header .mobile-nav .close svg {
-      cursor: pointer;
-      width: 35px;
-      height: 35px;
+        cursor: pointer;
+        width: 35px;
+        height: 35px;
     }
-  
+
     header .mobile-nav ul {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
     }
-  
+
     header .mobile-nav ul li {
-      cursor: pointer;
-      position: relative;
-      list-style: none;
-      width: 30%;
+        cursor: pointer;
+        position: relative;
+        list-style: none;
+        width: 30%;
     }
 
     header .mobile-nav ul li .language-mobile {
@@ -737,32 +741,32 @@ footer .container .totop .bi-arrow-up-circle:hover {
         cursor: pointer;
         transform: scale(1.2);
     }
-  
+
     header .mobile-nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 36px;
-      transition: 0.3s linear;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 36px;
+        transition: 0.3s linear;
     }
-  
+
     header .mobile-nav ul li .nav-link::after {
-      content: "";
-      display: block;
-      border-bottom: 1px solid #fff;
-      width: 0%;
-      transition: 0.3s linear;
+        content: "";
+        display: block;
+        border-bottom: 1px solid #fff;
+        width: 0%;
+        transition: 0.3s linear;
     }
-  
+
     header .mobile-nav ul li:hover .nav-link::after {
-      width: 100%;
-      transition: 0.3s linear;
+        width: 100%;
+        transition: 0.3s linear;
     }
-    
+
     .introduction h1 {
         font-size: 25px;
     }
-    
+
     .introduction h3 {
         font-size: 20px;
         padding: 0 20px;
@@ -773,7 +777,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
     .project .container .content,
     .contact .container .content {
         gap: 20px;
-    }   
+    }
 
     .about .container .content .title,
     .skill .container .content .title,
@@ -781,19 +785,19 @@ footer .container .totop .bi-arrow-up-circle:hover {
     .contact .container .content .title {
         font-size: 25px;
     }
-    
+
     .about .container .content .about-me {
         gap: 30px;
         margin: 0 30px;
         display: flex;
         flex-direction: column;
     }
-    
-    
+
+
     .about .container .content .about-me .profile img {
         width: 150px;
     }
-    
+
     .about .container .content .about-me .description {
         width: 90%;
         gap: 5px;
@@ -808,14 +812,15 @@ footer .container .totop .bi-arrow-up-circle:hover {
         font-size: 18px;
     }
 
-    .skill .container .content { /*this selector have a bigger gap than others*/
+    .skill .container .content {
+        /*this selector have a bigger gap than others*/
         gap: 40px;
     }
-    
+
     .carousel {
         width: 80%;
     }
-    
+
     .carousel-track .slider {
         filter: grayscale(100);
         opacity: 0.5;
@@ -823,7 +828,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
         transform: scale(0.7);
         transition: transform 0.3s, opacity 0.3s;
     }
-    
+
     .carousel-track .on {
         align-items: center;
         justify-content: center;
@@ -833,7 +838,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
         transform: scale(1.1);
         transition: transform 0.3s, opacity 0.3s;
     }
-    
+
     .nav-btn {
         background: none;
         border: none;
@@ -848,9 +853,10 @@ footer .container .totop .bi-arrow-up-circle:hover {
         gap: 20px;
         flex-wrap: nowrap;
     }
-    
+
     .project .container .content .projects .card {
-        width: 300px; /* Garante que ocupe o espaço disponível */
+        width: 300px;
+        /* Garante que ocupe o espaço disponível */
         height: 220px;
     }
 
@@ -859,11 +865,13 @@ footer .container .totop .bi-arrow-up-circle:hover {
     }
 
     .project .container .content .projects .card .description {
-        justify-content: space-between; /* Separa os itens */
+        justify-content: space-between;
+        /* Separa os itens */
         width: 100%;
         background: rgba(0, 0, 0, 0.7);
-        padding: 10px; /* Fundo semi-transparente */
-        gap:0px;
+        padding: 10px;
+        /* Fundo semi-transparente */
+        gap: 0px;
     }
 
     .project .container .content .projects .card .description h1 {
@@ -884,22 +892,22 @@ footer .container .totop .bi-arrow-up-circle:hover {
         gap: 20px;
         padding: 20px;
     }
-      
+
     .contact .container .content .contact-form .input input {
         width: 46%;
         padding: 12px;
     }
-      
+
     .contact .container .content .contact-form textarea {
         height: 200px;
     }
-      
+
     .contact .container .content .contact-area .div-icons-contact {
         display: flex;
         flex-direction: row;
         gap: 35px;
     }
-    
+
     .contact .container .content .contact-area .div-icons-contact .icons-contact {
         width: 45px;
         margin-bottom: 50px;
@@ -907,21 +915,21 @@ footer .container .totop .bi-arrow-up-circle:hover {
 
     footer .container {
         display: flex;
-        justify-content: space-between; 
-        align-items: center; 
+        justify-content: space-between;
+        align-items: center;
         padding: 10px;
-        gap:10px;
-        width: 100%; 
+        gap: 10px;
+        width: 100%;
     }
-    
+
     footer .container .dev {
         font-size: 9px;
     }
-    
+
     footer .container nav {
         gap: 10px;
     }
-    
+
     footer .container nav a {
         color: #ffffff;
         text-decoration: none;
@@ -929,8 +937,8 @@ footer .container .totop .bi-arrow-up-circle:hover {
         font-size: 12px;
         transition: 0.3s linear;
     }
-    
-    footer .container .totop{
+
+    footer .container .totop {
         gap: 5px;
     }
 
@@ -939,12 +947,13 @@ footer .container .totop .bi-arrow-up-circle:hover {
         width: 20px;
         margin: 10px;
     }
-  }
-  @media (min-width: 973px) and (max-width: 1400px) {
+}
+
+@media (min-width: 973px) and (max-width: 1400px) {
     .introduction h1 {
         font-size: 25px;
     }
-    
+
     .introduction h3 {
         font-size: 20px;
         padding: 0 20px;
@@ -955,7 +964,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
     .project .container .content,
     .contact .container .content {
         gap: 50px;
-    }   
+    }
 
     .about .container .content .title,
     .skill .container .content .title,
@@ -963,13 +972,14 @@ footer .container .totop .bi-arrow-up-circle:hover {
     .contact .container .content .title {
         font-size: 25px;
     }
-    
 
-    .skill .container .content { /*this selector have a bigger gap than others*/
+
+    .skill .container .content {
+        /*this selector have a bigger gap than others*/
         gap: 40px;
     }
 
-    
+
     .carousel-track .slider {
         filter: grayscale(100);
         opacity: 0.5;
@@ -977,7 +987,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
         transform: scale(0.7);
         transition: transform 0.3s, opacity 0.3s;
     }
-    
+
     .carousel-track .on {
         align-items: center;
         justify-content: center;
@@ -987,7 +997,7 @@ footer .container .totop .bi-arrow-up-circle:hover {
         transform: scale(1.1);
         transition: transform 0.3s, opacity 0.3s;
     }
-    
+
     .nav-btn {
         background: none;
         border: none;
@@ -1000,9 +1010,10 @@ footer .container .totop .bi-arrow-up-circle:hover {
     .project .container .content .projects {
         gap: 50px;
     }
-    
+
     .project .container .content .projects .card {
-        width: 450px; /* Garante que ocupe o espaço disponível */
+        width: 450px;
+        /* Garante que ocupe o espaço disponível */
         height: 300px;
     }
 
@@ -1011,11 +1022,13 @@ footer .container .totop .bi-arrow-up-circle:hover {
     }
 
     .project .container .content .projects .card .description {
-        justify-content: space-between; /* Separa os itens */
+        justify-content: space-between;
+        /* Separa os itens */
         width: 100%;
         background: rgba(0, 0, 0, 0.7);
-        padding: 10px; /* Fundo semi-transparente */
-        gap:0px;
+        padding: 10px;
+        /* Fundo semi-transparente */
+        gap: 0px;
     }
 
     .project .container .content .projects .card .description h1 {
@@ -1029,11 +1042,11 @@ footer .container .totop .bi-arrow-up-circle:hover {
 
     footer .container {
         display: flex;
-        justify-content: space-between; 
-        align-items: center; 
+        justify-content: space-between;
+        align-items: center;
         padding: 15px;
-        gap:15px;
-        width: 100%; 
+        gap: 15px;
+        width: 100%;
     }
 
-  }
+}
