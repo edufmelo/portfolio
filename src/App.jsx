@@ -1,7 +1,5 @@
 import {
-  useCallback,
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
 } from "react";
@@ -12,10 +10,10 @@ import {
   HiArrowUpCircle,
   HiArrowRight,
   HiBars3,
-  HiChevronLeft,
-  HiChevronRight,
   HiDocumentText,
   HiPaperAirplane,
+  HiPause,
+  HiPlay,
   HiXMark,
 } from "react-icons/hi2";
 import { MdEmail } from "react-icons/md";
@@ -36,6 +34,8 @@ import {
   SiLinktree,
   SiMysql,
   SiPython,
+  SiReact,
+  SiVite,
   SiWhatsapp,
 } from "react-icons/si";
 import {
@@ -161,6 +161,8 @@ const technologies = [
   { icon: SiHtml5, name: "HTML", color: "#E34F26" },
   { icon: SiCss, name: "CSS", color: "#663399" },
   { icon: SiJavascript, name: "JavaScript", color: "#F7DF1E" },
+  { icon: SiReact, name: "React", color: "#61DAFB" },
+  { icon: SiVite, name: "Vite", color: "#646CFF" },
   { icon: SiJquery, name: "jQuery", color: "#0769AD" },
   { icon: FaJava, name: "Java", color: "#ED8B00" },
   { icon: SiC, name: "C", color: "#A8B9CC" },
@@ -204,6 +206,8 @@ const projects = [
   {
     name: "Chopp Sul Araucária",
     className: "choppsul",
+    video: "/assets/projects/ChoppSulAraucaria_video.mp4",
+    poster: "/assets/projects/choppsul.png",
     links: [
       ["github", "https://github.com/edufmelo/Chopp-Sul-Araucaria"],
       [
@@ -216,6 +220,8 @@ const projects = [
   {
     name: "CleanCycle",
     className: "cleancycle",
+    video: "/assets/projects/CleanCycle_video.mp4",
+    poster: "/assets/projects/cleancycle.jpg",
     links: [
       [
         "linkedin",
@@ -226,6 +232,8 @@ const projects = [
   {
     name: "2D Parametric Curves",
     className: "cgiOne",
+    video: "/assets/projects/CurvasParametricas_video.mp4",
+    poster: "/assets/projects/2DParametricCurves.png",
     links: [
       [
         "linkedin",
@@ -237,6 +245,8 @@ const projects = [
   {
     name: "Modelling And Projections",
     className: "cgiTwo",
+    video: "/assets/projects/ModelagemHierarquica3DeProjecoes_video.mp4",
+    poster: "/assets/projects/TankProjections.png",
     links: [
       [
         "linkedin",
@@ -251,6 +261,8 @@ const projects = [
   {
     name: "Illumination And Shading",
     className: "cgiThree",
+    video: "/assets/projects/IluminacaoeShading_video.mp4",
+    poster: "/assets/projects/LightsProject.png",
     links: [
       [
         "linkedin",
@@ -473,122 +485,165 @@ function Header({ language, onLanguageChange, text }) {
 }
 
 function TechnologyCarousel() {
-  const [currentSlide, setCurrentSlide] = useState(2); // Começa no terceiro item
-  const [translateX, setTranslateX] = useState(0);
+  const [activeItem, setActiveItem] = useState("0-HTML");
   const wrapperRef = useRef(null);
   const itemRefs = useRef([]);
-  const pointerStart = useRef(null);
 
-  const updateCarousel = useCallback(() => {
+  useEffect(() => {
     const wrapper = wrapperRef.current;
-    const item = itemRefs.current[currentSlide];
+    const items = itemRefs.current.filter(Boolean);
+    if (!wrapper || !items.length) return undefined;
 
-    if (!wrapper || !item) return;
+    let animationFrame;
+    let lastUpdate = 0;
 
-    // Centraliza o item usando as dimensões reais, inclusive após redimensionar.
-    const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-    setTranslateX(wrapper.clientWidth / 2 - itemCenter);
-  }, [currentSlide]);
+    function updateCenteredTechnology() {
+      const wrapperRect = wrapper.getBoundingClientRect();
+      const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
+      let closestItem = null;
+      let closestDistance = Number.POSITIVE_INFINITY;
 
-  useLayoutEffect(() => {
-    updateCarousel();
+      items.forEach((item) => {
+        const itemRect = item.getBoundingClientRect();
+        if (
+          itemRect.right < wrapperRect.left ||
+          itemRect.left > wrapperRect.right
+        ) {
+          return;
+        }
 
-    const observer = new ResizeObserver(updateCarousel);
-    if (wrapperRef.current) observer.observe(wrapperRef.current);
-    itemRefs.current.forEach((item) => item && observer.observe(item));
+        const itemCenter = itemRect.left + itemRect.width / 2;
+        const distance = Math.abs(wrapperCenter - itemCenter);
 
-    return () => observer.disconnect();
-  }, [updateCarousel]);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestItem = item;
+        }
+      });
 
-  function nextSlider() {
-    setCurrentSlide((current) => (current + 1) % technologies.length);
-  }
+      if (closestItem) {
+        setActiveItem(closestItem.dataset.carouselKey);
+      }
+    }
 
-  function prevSlider() {
-    setCurrentSlide(
-      (current) => (current - 1 + technologies.length) % technologies.length,
-    );
-  }
+    function trackCenter(timestamp) {
+      if (timestamp - lastUpdate >= 60) {
+        updateCenteredTechnology();
+        lastUpdate = timestamp;
+      }
 
-  function handleKeyDown(event) {
-    if (event.key === "ArrowLeft") prevSlider();
-    if (event.key === "ArrowRight") nextSlider();
-  }
+      animationFrame = window.requestAnimationFrame(trackCenter);
+    }
 
-  function handlePointerDown(event) {
-    pointerStart.current = event.clientX;
-  }
-
-  function handlePointerUp(event) {
-    if (pointerStart.current === null) return;
-    const distance = event.clientX - pointerStart.current;
-    pointerStart.current = null;
-
-    if (Math.abs(distance) < 35) return;
-    if (distance > 0) prevSlider();
-    else nextSlider();
-  }
+    animationFrame = window.requestAnimationFrame(trackCenter);
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, []);
 
   return (
     <div
       className="carousel"
       role="region"
-      aria-label="Tecnologias"
+      aria-label="Tecnologias em movimento contínuo"
       tabIndex="0"
-      onKeyDown={handleKeyDown}
-      onPointerDown={handlePointerDown}
-      onPointerUp={handlePointerUp}
-      onPointerCancel={() => {
-        pointerStart.current = null;
-      }}
     >
-      <button
-        type="button"
-        className="nav-btn"
-        onClick={prevSlider}
-        aria-label="Tecnologia anterior"
-      >
-        <HiChevronLeft aria-hidden="true" />
-      </button>
       <div className="carousel-wrapper" ref={wrapperRef}>
-        <div
-          className="carousel-track"
-          style={{ transform: `translate3d(${translateX}px, 0, 0)` }}
-        >
-          {technologies.map((technology, index) => {
-            const Icon = technology.icon;
-            const isActive = index === currentSlide;
+        <div className="carousel-track">
+          {[0, 1].map((groupIndex) => (
+            <div
+              key={groupIndex}
+              className="carousel-sequence"
+              aria-hidden={groupIndex === 1 ? "true" : undefined}
+            >
+              {technologies.map((technology, technologyIndex) => {
+                const Icon = technology.icon;
+                const refIndex =
+                  groupIndex * technologies.length + technologyIndex;
+                const carouselKey = `${groupIndex}-${technology.name}`;
+                const isActive = carouselKey === activeItem;
 
-            return (
-              <span
-                key={technology.name}
-                ref={(element) => {
-                  itemRefs.current[index] = element;
-                }}
-                title={technology.name}
-                className={`slider${isActive ? " on" : ""}`}
-                style={{ "--brand-color": technology.color }}
-                aria-label={technology.name}
-                aria-current={isActive ? "true" : undefined}
-                role="img"
-              >
-                <Icon aria-hidden="true" />
-              </span>
-            );
-          })}
+                return (
+                  <span
+                    key={carouselKey}
+                    ref={(element) => {
+                      itemRefs.current[refIndex] = element;
+                    }}
+                    data-carousel-key={carouselKey}
+                    title={technology.name}
+                    className={`slider${isActive ? " on" : ""}`}
+                    style={{ "--brand-color": technology.color }}
+                    aria-label={
+                      groupIndex === 0 ? technology.name : undefined
+                    }
+                    aria-current={
+                      groupIndex === 0 && isActive ? "true" : undefined
+                    }
+                    role={groupIndex === 0 ? "img" : undefined}
+                  >
+                    <Icon aria-hidden="true" />
+                    {isActive && (
+                      <span className="slider-label">{technology.name}</span>
+                    )}
+                  </span>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
+    </div>
+  );
+}
+
+function ProjectVideo({ project }) {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  function togglePlayback() {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      video.play().catch(() => setIsPlaying(false));
+    } else {
+      video.pause();
+    }
+  }
+
+  return (
+    <div className={`project-video${isPlaying ? " is-playing" : ""}`}>
+      <video
+        ref={videoRef}
+        className="project-media"
+        src={project.video}
+        poster={project.poster}
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+        onEnded={() => setIsPlaying(false)}
+        aria-hidden="true"
+        tabIndex="-1"
+      />
       <button
         type="button"
-        className="nav-btn"
-        onClick={nextSlider}
-        aria-label="Próxima tecnologia"
+        className="project-playback"
+        onClick={togglePlayback}
+        aria-label={
+          isPlaying
+            ? `Pausar ${project.name}`
+            : `Reproduzir ${project.name}`
+        }
       >
-        <HiChevronRight aria-hidden="true" />
+        <span className="project-playback-icon">
+          {isPlaying ? (
+            <HiPause aria-hidden="true" />
+          ) : (
+            <HiPlay aria-hidden="true" />
+          )}
+        </span>
       </button>
-      <p className="carousel-label" aria-live="polite">
-        {technologies[currentSlide].name}
-      </p>
     </div>
   );
 }
@@ -601,6 +656,7 @@ function ProjectCard({ project, index }) {
       delay={(index % 2) * 110}
       variant="up"
     >
+      <ProjectVideo project={project} />
       <div className="description">
         <h2>{project.name}</h2>
         <div className="icons">
