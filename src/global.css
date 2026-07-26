@@ -140,10 +140,10 @@ header .language {
 
 header .language p,
 header .language-mobile p {
-    display: grid;
-    grid-template-columns: 28px 8px 28px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 6px;
     text-align: center;
 }
 
@@ -764,13 +764,11 @@ header .menu-mobile {
 }
 
 .carousel {
-    display: grid;
-    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    display: block;
     align-items: center;
     justify-content: center;
     position: relative;
-    width: min(90vw, 1500px);
-    touch-action: pan-y;
+    width: min(76vw, 1120px);
     outline: none;
 }
 
@@ -783,20 +781,31 @@ header .menu-mobile {
 .carousel-wrapper {
     overflow: hidden;
     width: 100%;
-    padding: 18px 0;
+    padding: 18px 0 44px;
 }
 
 .carousel-track {
+    --carousel-gap: clamp(44px, 7vw, 120px);
     display: flex;
     align-items: center;
-    gap: clamp(20px, 9.4vw, 200px);
+    gap: 0;
     width: max-content;
-    transition: transform 0.5s ease-in-out;
+    animation: technology-marquee 85s linear infinite;
+    animation-delay: -42.5s;
     will-change: transform;
+}
+
+.carousel-sequence {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--carousel-gap);
+    padding-right: var(--carousel-gap);
 }
 
 .carousel-track .slider {
     flex: 0 0 110px;
+    position: relative;
     display: grid;
     place-items: center;
     color: #fff;
@@ -820,44 +829,23 @@ header .menu-mobile {
     filter: drop-shadow(0 0 14px color-mix(in srgb, var(--brand-color) 35%, transparent));
 }
 
-.nav-btn {
-    display: grid;
-    place-items: center;
-    background: none;
-    border: none;
-    color: white;
-    padding: 0;
-    line-height: 0;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.nav-btn svg {
-    display: block;
-    width: 25px;
-    height: 25px;
-}
-
-.nav-btn:hover,
-.nav-btn:focus-visible {
-    background-color: rgba(255, 255, 255, 0.12);
-    transform: scale(1.08);
-}
-
-.carousel-label {
+.carousel-track .slider-label {
     position: absolute;
-    bottom: -20px;
+    top: calc(100% + 14px);
     left: 50%;
-    transform: translateX(-50%);
+    color: #b8b8b8;
     font-family: "Sora", sans-serif;
     font-size: 14px;
-    color: #b8b8b8;
+    font-weight: 400;
+    line-height: 1.2;
     white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+@keyframes technology-marquee {
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
 }
 
 .project {
@@ -888,40 +876,66 @@ header .menu-mobile {
 }
 
 .project .container .content .projects .card::before {
-    content: "";
+    display: none;
+}
+
+.project .container .content .projects .card .project-video {
     position: absolute;
+    inset: 0;
+    z-index: 0;
     width: 100%;
     height: 100%;
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.8;
-    z-index: -1;
-    border-radius: 12px;
 }
 
-.project .container .content .projects .choppsul::before {
-    background-image: url("/assets/projects/choppsul.png");
+.project .container .content .projects .card .project-media {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #050505;
 }
 
-.project .container .content .projects .cleancycle::before {
-    background-image: url("/assets/projects/cleancycle.jpg");
+.project-playback {
+    position: absolute;
+    inset: 0 0 76px;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
 }
 
-.project .container .content .projects .cgiOne::before {
-    background-image: url("/assets/projects/2DParametricCurves.png");
+.project-playback-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    padding-left: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.62);
+    color: #fff;
+    font-size: 27px;
+    backdrop-filter: blur(7px);
+    transition: opacity 0.2s ease, transform 0.2s ease,
+        background-color 0.2s ease;
 }
 
-.project .container .content .projects .cgiOne::before {
-    background-image: url("/assets/projects/2DParametricCurves.png");
+.project-playback:hover .project-playback-icon,
+.project-playback:focus-visible .project-playback-icon {
+    background: rgba(0, 0, 0, 0.82);
+    transform: scale(1.08);
 }
 
-.project .container .content .projects .cgiTwo::before {
-    background-image: url("/assets/projects/TankProjections.png");
+.project-video.is-playing .project-playback-icon {
+    opacity: 0;
 }
 
-.project .container .content .projects .cgiThree::before {
-    background-image: url("/assets/projects/LightsProject.png");
+.project-video.is-playing .project-playback:hover .project-playback-icon,
+.project-video.is-playing .project-playback:focus-visible .project-playback-icon {
+    opacity: 1;
 }
 
 .project .container .content .projects .card .description {
@@ -929,6 +943,7 @@ header .menu-mobile {
     align-items: center;
     justify-content: space-between;
     position: absolute;
+    z-index: 2;
     bottom: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
@@ -1454,6 +1469,15 @@ footer .container .totop .back-to-top-icon:hover {
         font-weight: 500;
     }
 
+    header .mobile-nav ul li .language-mobile p {
+        gap: 12px;
+    }
+
+    header .mobile-nav ul li .language-mobile button {
+        width: 52px;
+        min-height: 48px;
+    }
+
     header .mobile-nav ul li a {
         color: #fff;
         text-decoration: none;
@@ -1633,11 +1657,6 @@ footer .container .totop .back-to-top-icon:hover {
         gap: 40px;
     }
 
-    .carousel {
-        grid-template-columns: 40px minmax(0, 1fr) 40px;
-        width: min(96vw, 760px);
-    }
-
     .carousel-track .slider {
         opacity: 0.5;
         flex-basis: 40px;
@@ -1647,21 +1666,14 @@ footer .container .totop .back-to-top-icon:hover {
         transition: transform 0.3s, opacity 0.3s;
     }
 
+    .carousel {
+        width: min(calc(100vw - 36px), 680px);
+    }
+
     .carousel-track .on {
         opacity: 1;
         transform: scale(1.1);
         transition: transform 0.3s, opacity 0.3s;
-    }
-
-    .nav-btn {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 32px;
-        cursor: pointer;
-        position: relative;
-        width: 40px;
-        height: 40px;
     }
 
     .project .container .content .projects {
@@ -1692,6 +1704,16 @@ footer .container .totop .back-to-top-icon:hover {
 
     .project .container .content .projects .card .description h2 {
         font-size: 20px;
+    }
+
+    .project-playback {
+        inset: 0 0 58px;
+    }
+
+    .project-playback-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 23px;
     }
 
     .project .container .content .projects .card .description .project-icon {
@@ -1733,22 +1755,26 @@ footer .container .totop .back-to-top-icon:hover {
     }
 
     footer .container {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
         align-items: center;
-        padding: 10px;
-        gap: 10px;
+        padding: 22px 20px calc(22px + env(safe-area-inset-bottom));
+        column-gap: 16px;
+        row-gap: 16px;
         width: 100%;
-        flex-wrap: wrap;
     }
 
     footer .container .dev {
-        font-size: 9px;
+        min-width: 0;
+        font-size: 10px;
+        white-space: nowrap;
     }
 
     footer .container nav {
-        gap: 10px;
-        flex-wrap: wrap;
+        grid-column: 1 / -1;
+        grid-row: 2;
+        gap: clamp(12px, 4vw, 22px);
+        flex-wrap: nowrap;
         justify-content: center;
     }
 
@@ -1761,13 +1787,15 @@ footer .container .totop .back-to-top-icon:hover {
     }
 
     footer .container .totop {
-        gap: 5px;
+        justify-self: end;
+        gap: 0;
     }
 
     footer .container .totop svg {
-        height: 20px;
-        width: 20px;
-        margin: 10px;
+        display: block;
+        height: 28px;
+        width: 28px;
+        margin: 0;
     }
 }
 
@@ -1840,15 +1868,6 @@ footer .container .totop .back-to-top-icon:hover {
         opacity: 1;
         transform: scale(1.1);
         transition: transform 0.3s, opacity 0.3s;
-    }
-
-    .nav-btn {
-        background: none;
-        border: none;
-        color: white;
-        font-size: 32px;
-        cursor: pointer;
-        position: relative;
     }
 
     .project .container .content .projects {
